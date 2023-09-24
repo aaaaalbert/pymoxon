@@ -36,9 +36,9 @@ normalized_wire_diameter = args.wire_diameter / wavelength
 
 log_wire_diameter = math.log(normalized_wire_diameter, 10)
 
-if -2 < log_wire_diameter < -6:
-    print("Warning: Wire diameter is", log_wire_diameter,
-            "which is outside of model range. Proceed with caution.")
+if log_wire_diameter < -6 or log_wire_diameter > -2:
+    print("Warning: Wire diameter", args.wire_diameter,
+            "is outside of model range. Proceed with caution.")
 
 # A is the width of the driven element
 # This 2nd order poly models dimension A
